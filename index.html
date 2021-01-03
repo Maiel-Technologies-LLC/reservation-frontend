@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+
+    <script>
+
+window.onload = function(){
+
+    let date = new Date();
+
+    let today = date.toLocaleDateString().split("/");
+
+    let month = today[0];
+
+    let day = today[1];
+
+    let year =  today[2];
+
+    document.getElementById("reservationDate").min = year + "-" + month + "-" + day;
+
+
+
+    document.getElementById("timeFrom").min = "10:20:00";
+    //alert(newDate);
+    
+    }
+
+    </script>
+
     <title>Reservation</title>
 </head>
 <body>
@@ -19,70 +46,69 @@
             <div class="form-container">
                 <h1 class="form-title">Book a Reservation</h1>
                 <br>
-                <form action="#">
+                <form action="https://mtl-reservation-backend.herokuapp.com/mail" method="POST">
                     
                     <div class="input-group">
                     
                         <div class="input">
                             <label for="">First Name</label>
-                            <input type="text">
+                            <input name="firstName" type="text" required>
                         </div>
                     
                         <div class="input">
                             <label for="">Last Name</label>
-                            <input type="text">
+                            <input name="lastName" type="text" required>
                         </div>
 
                     </div>
                     
-
                     <div class="input">
                         <label for="">Email</label>
-                        <input type="email">
+                        <input name="email" type="email" required>
                     </div>
                     
                     <div class="input">
                         <label for="">Phone NO</label>
-                        <input type="tel">
+                        <input name="telephone" type="tel" required>
                     </div>
                     
                     <div class="input">
                         <label for="">Number of Guests</label>
-                        <input type="number">
+                        <input name="guests" type="number" min="1" max="6" required>
                     </div>
                     
                     <div class="input">
                         <label for="">Reservation Date</label>
-                        <input type="date">
+                        <input name="reservationDate" type="date" id="reservationDate">
                     </div>
                     
                     <div class="input-group">
                         <div class="input">
                             <label for="">From</label>
-                            <input type="time">
+                            <input name="timeFrom" type="time" id="timeFrom" min="09:00" max="21:00" required>
                         </div>
                         
                         <div class="input">
                             <label for="">To</label>
-                            <input type="time">
+                            <input name="timeTo" type="time" required>
                         </div>
                     </div>
                     
                     <div class="input-group">
                         <div class="input">
                             <label for="">Table Reservation</label>
-                            <select name="" id="">
-                                <option value="">Yes</option>
-                                <option value="">No</option>
+                            <select name="table" id="">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
                             </select>
                         </div>
                         
                         <div class="input">
                             <label for="">Reservation Type</label>
-                            <select name="" id="">
-                                <option value="">Birthday</option>
-                                <option value="">Proposal</option>
-                                <option value="">Others</option>
+                            <select name="reservationType" id="">
+                                <option value="birthday">Birthday</option>
+                                <option value="proposal">Proposal</option>
+                                <option value="others">Others</option>
                             </select>
                         </div>
                     </div>
@@ -90,12 +116,12 @@
                     
                     <div class="input">
                         <label for="">If Other above, please specify?</label>
-                        <input type="text">
+                        <input name="others" type="text">
                     </div>
                     
                     <div class="input">
                         <label for="">Any Special Request?</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="specialRequest" id="" cols="30" rows="10"></textarea>
                     </div>
                     
 
