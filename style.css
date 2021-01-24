@@ -2,6 +2,7 @@
     margin: 0px;
     font-family: Helvetica;
     box-sizing: border-box;
+    color: #555;
 }
 
 .container {
@@ -22,12 +23,16 @@
     background-size: cover;
 }
 
+h2 {
+    color: #555;  
+}
+
 .form-container {
     padding: 20px 30px;
 }
 
 .form-title {
-    color: #555;
+    color: #98B299;
 }
 
 .input {
@@ -36,6 +41,8 @@
 
 label {
     display: block;
+    font-weight: bold;
+    color: #555;
 }
 
 input {

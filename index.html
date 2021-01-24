@@ -45,9 +45,11 @@ window.onload = function(){
 
             <div class="form-container">
                 <h1 class="form-title">Book a Reservation</h1>
-                <br>
+                <br><br><br>   
                 <form action="https://mtl-reservation-backend.herokuapp.com/mail" method="POST">
-                    
+                
+                    <h2>Personal Info</h2>
+                    <br>
                     <div class="input-group">
                     
                         <div class="input">
@@ -71,7 +73,10 @@ window.onload = function(){
                         <label for="">Phone NO</label>
                         <input name="telephone" type="tel" required>
                     </div>
-                    
+                    <br><br>
+
+                    <h2>Reservation Info</h2>
+                    <br>
                     <div class="input">
                         <label for="">Number of Guests</label>
                         <input name="guests" type="number" min="1" max="6" required>
@@ -90,7 +95,7 @@ window.onload = function(){
                         
                         <div class="input">
                             <label for="">To</label>
-                            <input name="timeTo" type="time" required>
+                            <input name="timeTo" type="time" id="timeTo" min="09:00" max="22:00" required>
                         </div>
                     </div>
                     
